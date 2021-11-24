@@ -16,23 +16,24 @@ class ProxyConfig {
                         route -> route.path("/email/**")
                                 .and()
                                 .method(HttpMethod.GET)
-                                .filters(filter -> filter.stripPrefix(1)
-                                )
                                 .uri("lb://email-sender"))
                 .route("sms_route",
                         route -> route.path("/sms/**")
                                 .and()
                                 .method(HttpMethod.GET)
-                                .filters(filter -> filter.stripPrefix(1)
-                                )
                                 .uri("lb://sms-sender"))
                 .route("push_route",
                         route -> route.path("/push/**")
                                 .and()
                                 .method(HttpMethod.GET)
+                                .uri("lb://push-sender"))
+                .route("message_sender_route",
+                        route -> route.path("/send/**")
+                                .and()
+                                .method(HttpMethod.GET)
                                 .filters(filter -> filter.stripPrefix(1)
                                 )
-                                .uri("lb://push-sender"))
+                                .uri("lb://message-sender"))
                 .build();
     }
 }

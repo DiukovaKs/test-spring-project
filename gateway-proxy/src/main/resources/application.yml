@@ -14,17 +14,20 @@ spring:
           predicates:
             - Path=/email/**
           filters:
-            - StripPrefix=1
         - id: sms_route
           uri: lb://sms-sender
           predicates:
             - Path=/sms/**
           filters:
-            - StripPrefix=1
         - id: push_route
           uri: lb://push-sender
           predicates:
             - Path=/push/**
+          filters:
+        - id: message_sender_route
+          uri: lb://message-sender
+          predicates:
+            - Path=/send/**
           filters:
             - StripPrefix=1
 eureka:
