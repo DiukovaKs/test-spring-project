@@ -1,0 +1,36 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: proxy
+    loadbalancer:
+      ribbon:
+        enabled: false
+  cloud:
+    gateway:
+      routes:
+        - id: email_route
+          uri: lb://email-sender
+          predicates:
+            - Path=/email/**
+          filters:
+            - StripPrefix=1
+        - id: sms_route
+          uri: lb://sms-sender
+          predicates:
+            - Path=/sms/**
+          filters:
+            - StripPrefix=1
+        - id: push_route
+          uri: lb://push-sender
+          predicates:
+            - Path=/push/**
+          filters:
+            - StripPrefix=1
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+logging:
+  level:
+    org.springframework: debug
