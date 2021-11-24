@@ -1,0 +1,6 @@
+# Project exclude paths
+/email-sender/target/
+/eurika/target/
+/gateway-proxy/target/
+/push-sender/target/
+/sms-sender/target/
