@@ -12,7 +12,7 @@
         <module>message-sender</module>
         <module>email-sender</module>
         <module>sms-sender</module>
-        <module>eurika</module>
+        <module>eureka</module>
         <module>gateway-proxy</module>
         <module>push-sender</module>
     </modules>
