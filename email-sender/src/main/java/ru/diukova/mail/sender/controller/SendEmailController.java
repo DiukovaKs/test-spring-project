@@ -1,21 +1,21 @@
 package ru.diukova.mail.sender.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.diukova.mail.sender.service.SendEmailService;
 
 @RestController
 public class SendEmailController {
-    private static final Logger LOG = LoggerFactory.getLogger(SendEmailController.class);
+
+    @Autowired
+    SendEmailService sendEmailService;
 
     public SendEmailController() {
     }
 
     @GetMapping("/email")
     public String sendEmail() {
-        LOG.info("Send E-mail");
-
-        return "Send E-mail!";
+        return sendEmailService.sendEmail();
     }
 }
