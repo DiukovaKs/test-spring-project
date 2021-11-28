@@ -1,0 +1,9 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: push-sender
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false

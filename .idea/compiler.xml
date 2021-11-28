@@ -18,12 +18,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="email-sender" options="-parameters" />
-      <module name="eureka" options="-parameters" />
-      <module name="gateway-proxy" options="-parameters" />
-      <module name="message-sender" options="-parameters" />
-      <module name="push-sender" options="-parameters" />
-      <module name="sms-sender" options="-parameters" />
+      <module name="email-sender" options="" />
+      <module name="eureka" options="" />
+      <module name="gateway-proxy" options="" />
+      <module name="message-sender" options="" />
+      <module name="push-sender" options="" />
+      <module name="sms-sender" options="" />
     </option>
   </component>
 </project>

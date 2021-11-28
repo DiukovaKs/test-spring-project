@@ -16,8 +16,6 @@ public class MessageSenderController {
 
     @GetMapping("/{param}")
     String sendMessage(@PathVariable String param) {
-        log.info("get request");
-
         return sendMessageService.sendMessage(param);
     }
 }

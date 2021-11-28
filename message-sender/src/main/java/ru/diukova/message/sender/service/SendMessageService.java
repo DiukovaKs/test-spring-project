@@ -14,7 +14,7 @@ public class SendMessageService {
 
     public String sendMessage(String param) {
         String result = "No such sender application";
-        log.info("get request");
+        log.info("get request " + param);
 
         switch (param) {
             case "email":
